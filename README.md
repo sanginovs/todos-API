@@ -1,11 +1,11 @@
 # TODO list API
 
 
-
 ## Introduction
 
 TODO list API lets you search, fetch, create to-do-items and also group them together. One has to use RESTful calling style to access and edit TODO list API.
 
+## API Reference and Resource Types
 
 | Method       	 | HTTP Request  	| Description|
 | ------------- |:-------------:	| -----:      |
@@ -18,6 +18,18 @@ TODO list API lets you search, fetch, create to-do-items and also group them tog
 | getSpecificTask| GET  /task/:taskId  | Returns specific task.|
 | addNewTask   | POST  /create         | Creates a new to-do-task inside a specific list/group. Note: Provide group_id in the POST request's header. e.g id:group_id|
 | deleteTask    | DELETE  /remove/:groupId/:taskId| Deletes the user's specified to-do-item.|
+
+## Get Started
+
+To build TODO list API, I used list of standard libraries to get the server up and running. So, the first one is NodeJS which will install Node and npm. It is the basis of my server and I used it along with Express to build a web server in API endpoints. So, Express is Node.js web application framework, and is used to build all the API endpoints. Also, I used mongoDB database to store TODO list data. Finally, I used Babel library to write ES6 Syntax since it transpiles the code for us.
+
+To be able to run this project, you need the following
+1. Fork/Clone
+1. Install [Node.js](https://nodejs.org/en/)
+1. Install [mongoDB](https://www.mongodb.com/)
+1. Install dependencies - `npm install`
+1. Run the development server - `npm start`  (Note: Make sure you aslo start your mongoDB database using mongod command.)
+
 
 ## Authors
 
