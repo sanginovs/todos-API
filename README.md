@@ -34,7 +34,7 @@ To be able to run this project, you need the following
 ## Demo
 
 <a href="https://www.youtube.com/watch?v=w_N4Ud4ZeP0" target="blank"><img src="https://wp-filter.com/codecanyon/images/demo_site.png"
-alt="Start Demo" width="240" height="180" border="10" /></a>
+alt="Start Demo" width="600" height="200" border="10" /></a>
 
 ## Authors
 
