@@ -21,11 +21,12 @@ export const addNewGroup =(req, res)=> {
 };
 /* get all groups; GET /getallgroups */
 export const getGroups = (req, res) =>{
-  Group.find({}, (err, groups) => {
+  console.log("inside get groups")
+  Group.find({}, (err, list) => {
       if (err) {
           res.send(err);
       }
-      res.json(groups);
+      res.json(list);
   });
 };
 
@@ -38,28 +39,48 @@ export const getSpecificGroup =(req, res) =>{
       res.json(item);
 });}
 
+
+var deleteIds = [];
 /* Delete group DELETE /deletegroup/:groupId */
 export const deleteGroup =(req, res) =>{
-    Group.findById(req.params.groupId, (err, group) => {
+  deleteIds = [];
+  Group.findById(req.params.groupId, (err, group) => {
       if (err) {
           res.send(err);
-        }
-      group.todoitems.forEach(function(id){
-        Todo.remove({_id: id}, (err, todo )=>{
-          if(err){
-            res.send(err);
-          }
-        });
-      });
-    });
+      }else{
+          group.todoitems.forEach(function(id) {
+              console.log(id);
+              deleteIds.push(id);
+          });
+     async.map(deleteIds,deleteTodos,function(err,data){
+              if(err){
+                  res.send(err)
+              }else{
+                Group.remove({ _id: req.params.groupId }, (err, item) => {
+                  if (err) {
+                      res.send(err);
+                  }
+                  console.log(item);
+                  res.json({ message: 'The group and its to-do-items were deleted.'});
+                  });
 
-    Group.remove({ _id: req.params.groupId }, (err, item) => {
-      if (err) {
-          res.send(err);
+              }
+          })
       }
-      res.json({ message: 'The group and its to-do-items were deleted.'});
-  })
+    });
+  }
+function deleteTodos(id,cb){
+    Todo.remove({_id: id}, (err, task)=>{
+     if(err){
+        res.send(err);
+    }else{
+        cb();
+    }
+   });
+
 }
+
+
 
 /* get all tasks for specific group GET /getgrouptaks/:groupId */
 var async = require('async')
@@ -125,7 +146,7 @@ export const addNewTask = (req, res) => {
 
 /* GET  /gettask/:taskId */
 export const getSpecificTask = (req, res) => {
-    Form.findById(req.params.taskId, (err, task)=>{
+    Todo.findById(req.params.taskId, (err, task)=>{
       if(err){
         res.send(err);
       }
@@ -145,30 +166,40 @@ export const getalltask = (req, res )=>{
 
 }
 
+var removeId = [];
 /* DELETE task /deletetask/:groupId/:taskId  */
 export const deleteTask = (req, res) => {
+    removeId=[];
     Group.findById(req.params.groupId, (err, item) => {
         if (err) {
             res.send(err);
         }
-        item.todoitems.forEach(function(id) {
-            if(id==req.params.taskId){
-                      var index = item.todoitems.indexOf(id);
-                      if(index >-1){
-                        item.todoitems.splice(index, 1);
-                        item.save()
-                        Todo.remove({ _id: id }, function(err) {
-                                if (!err) {
-                                        res.json("Success, the item was deleted")
-                                }
-                                else {
-                                        res.send(err);
-                                }
-                            });}
-                    else
-                   {
-                        res.send("The item does not exist.")
-                   }
-                 }
-            else{res.send("There is no such item in the to-do-list.")}})
-          });}
+        else{
+                  removeId.push(req.params.taskId);
+                  item.todoitems.forEach(function(id) {
+                  if(id==req.params.taskId){
+                            var index = item.todoitems.indexOf(id);
+                            if(index >-1){
+
+                              item.todoitems.splice(index, 1);
+                              item.save()
+                            };}
+                          });
+                async.map(removeId, removeTask, function(err, data){
+                  if(err){res.send(err)}
+                  else{res.send("Success, the item was deleted")}
+                })
+
+            };
+    }); }
+
+  function removeTask(id,cb){
+      Todo.remove({_id: id}, (err, task)=>{
+       if(err){
+          res.send(err);
+      }else{
+          cb();
+      }
+     });
+
+    }
