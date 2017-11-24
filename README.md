@@ -29,6 +29,7 @@ To be able to run this project, you need the following
 1. Install [mongoDB](https://www.mongodb.com/)
 1. Install dependencies - `npm install`
 1. Run the development server - `npm start`  (Note: Make sure you aslo start your mongoDB database using mongod command.)
+1. To be able to test TODO list API endpoints, you can use front-end tools such as [Api Tester](https://apitester.com/), (Postman)[https://www.getpostman.com/], etc.
 
 
 ## Authors
