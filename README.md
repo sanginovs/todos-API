@@ -16,7 +16,7 @@ TODO list API lets you search, fetch, create to-do-items and also group them tog
 |getGroupItems  | GET  /grouptasks/:groupId | Returns all the to-do-items from a specific list/group.|
 | getAllTasks   | GET  /tasks           | Returns all the to-do-tasks from all lists/groups.|
 | getSpecificTask| GET  /task/:taskId  | Returns specific task.|
-| addNewTask   | POST  /create         | Creates a new to-do-task inside a specific list/group. /nNote: Provide group id in request's header; e.g id:123|
+| addNewTask   | POST  /create         | Creates a new to-do-task inside a specific list/group. Note: Provide group_id in the POST request's header. e.g id:group_id|
 | deleteTask    | DELETE  /remove/:groupId/:taskId| Deletes the user's specified to-do-item.|
 
 ## Authors
