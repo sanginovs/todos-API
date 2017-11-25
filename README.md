@@ -5,6 +5,11 @@
 
 TODO list API lets you search, fetch, create to-do-items and also group them together. One has to use RESTful calling style to access and edit TODO list API.
 
+## Video Demo
+
+<a href="https://www.youtube.com/watch?v=XBAy-1FJA4c" target="blank"><img src="https://image.ibb.co/mctJq6/demo.jpg"
+alt="Start Demo" width="1000" height="600" border="10" /></a>
+
 ## API Reference and Resource Types
 
 | Method       	 | HTTP Request  	| Description|
@@ -31,10 +36,7 @@ To be able to run this project, you need the following
 1. Run the development server - `npm start`  (Note: Make sure you also start your mongoDB database using mongod command.)
 1. To be able to test TODO list API endpoints, you can use front-end tools such as [Api Tester](https://apitester.com/), [Postman](https://www.getpostman.com/), etc.
 
-## Video Demo
 
-<a href="https://www.youtube.com/watch?v=XBAy-1FJA4c" target="blank"><img src="https://image.ibb.co/mctJq6/demo.jpg"
-alt="Start Demo" width="1000" height="600" border="10" /></a>
 
 ## Authors
 
