@@ -9,7 +9,7 @@ TODO list API lets you search, fetch, create to-do-items and also group them tog
 
 | Method       	 | HTTP Request  	| Description|
 | ------------- |:-------------:	| -----:      |
-| getGroups     | GET  /group           | Returns all the user's task lists.|
+| getGroups     | GET  /groups           | Returns all the user's task lists/groups.|
 | getSpecificGroup| GET /group/:groupId | Returns the user's specified task list |
 | deleteGroup   | DELETE /group/:groupId| Deletes the entire user's specified task list. |
 | addNewGroup   | POST  /creategroup    | Creates task list for to-do-items e.g."Shopping List"|
@@ -31,10 +31,10 @@ To be able to run this project, you need the following
 1. Run the development server - `npm start`  (Note: Make sure you also start your mongoDB database using mongod command.)
 1. To be able to test TODO list API endpoints, you can use front-end tools such as [Api Tester](https://apitester.com/), [Postman](https://www.getpostman.com/), etc.
 
-## Demo
+## Video Demo
 
-<a href="https://www.youtube.com/watch?v=w_N4Ud4ZeP0" target="blank"><img src="https://wp-filter.com/codecanyon/images/demo_site.png"
-alt="Start Demo" width="600" height="200" border="10" /></a>
+<a href="https://www.youtube.com/watch?v=XBAy-1FJA4c" target="blank"><img src="https://ibin.co/w800/3iRwwy2uKwvS.png"
+alt="Start Demo" width="1000" height="400" border="10" /></a>
 
 ## Authors
 
