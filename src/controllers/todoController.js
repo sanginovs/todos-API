@@ -69,6 +69,8 @@ export const deleteGroup =(req, res) =>{
       }
     });
   }
+
+/* callback function */
 function deleteTodos(id,cb){
     Todo.remove({_id: id}, (err, task)=>{
      if(err){
@@ -111,6 +113,7 @@ export const getGroupItems = (req, res) => {
     });
 
 }
+/* callback function */
 function getTodos(id,cb){
     Todo.findById(id, (err, task)=>{
      if(err){
@@ -193,6 +196,7 @@ export const deleteTask = (req, res) => {
             };
     }); }
 
+/* callback function */
   function removeTask(id,cb){
       Todo.remove({_id: id}, (err, task)=>{
        if(err){

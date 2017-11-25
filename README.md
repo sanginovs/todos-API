@@ -33,8 +33,8 @@ To be able to run this project, you need the following
 
 ## Video Demo
 
-<a href="https://www.youtube.com/watch?v=XBAy-1FJA4c" target="blank"><img src="https://ibin.co/w800/3iRwwy2uKwvS.png"
-alt="Start Demo" width="1000" height="400" border="10" /></a>
+<a href="https://www.youtube.com/watch?v=XBAy-1FJA4c" target="blank"><img src="https://image.ibb.co/mctJq6/demo.jpg"
+alt="Start Demo" width="1000" height="600" border="10" /></a>
 
 ## Authors
 
