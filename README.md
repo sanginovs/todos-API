@@ -43,7 +43,7 @@ I followed the MVC design pattern to build this project but the only letter we'r
  
 ```
 - TODO list API
-   - src   #MVC files
+   - src   				//MVC files
       -controllers
 	-todoController.js  		//all the functions that handle API endpoints are located in this file
       -models
