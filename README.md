@@ -45,16 +45,16 @@ I followed the MVC design pattern to build this project but the only letter we'r
 - TODO list API
    - src   #MVC files
       -controllers
-	-todoController.js  #all the functions that handle API endpoints are located in this file
+	-todoController.js  		//all the functions that handle API endpoints are located in this file
       -models
-        -todoModel.js     #database schemas are located in this file. 
+        -todoModel.js     		//database schemas are located in this file. 
       -routes
-        -todoRoutes.js   #contains all the API endpoints and handles HTTP requests
-   - .babelrc   #Babel configuration file
-   - LICENSE      #MIT license for this project
-   - README.md     #documentation
-   - index.js      #The entry point of our API
-   - package.json   #holds various metadata relevant to project
+        -todoRoutes.js   		//contains all the API endpoints and handles HTTP requests
+   - .babelrc   			//Babel configuration file
+   - LICENSE      			//MIT license for this project
+   - README.md     			//documentation
+   - index.js      			//The entry point of our API
+   - package.json   			//holds various metadata relevant to project
 ```
 
 ## Authors
