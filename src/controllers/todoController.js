@@ -85,7 +85,7 @@ function deleteTodos(id,cb){
 
 
 /* get all tasks for specific group GET /getgrouptaks/:groupId */
-var async = require('async')
+
 var todoarray =[];
 var todoIds = [];
 
@@ -108,8 +108,7 @@ export const getGroupItems = (req, res) => {
                 }
             })
         }
-    // res.send(todoarray);  ---> [] i got yr problem
-    //   send array to user
+  
     });
 
 }
